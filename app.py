@@ -26,12 +26,16 @@ class Student(db.Model):
     bio = db.Column(db.Text)
     
     
-    # ...
-
+    #
 @app.route('/')
 def index():
     students = Student.query.all()
-    return render_template('index.html', students=students)
+    return render_template('index.html') ...
+
+@app.route('/project')
+def index():
+    students = Student.query.all()
+    return render_template('project.html', students=students)
 
 # ...
 
